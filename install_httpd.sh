@@ -37,7 +37,7 @@ do
 		echo "Do you want start Apache2 when you start your server in level 2,3 and 5 ? (yes / no)";
 		read rep
 		case $rep in
-			y*|Y*|O*|o* ) su -lc 'systemctl enable httpd.service' ; break;;
+			y*|Y*|O*|o* ) su -lc 'chkconfig --level 235 httpd on' ; break;;
 			n*|N* ) echo "Don't forget to start Apache when you restart your server next time " ; break ;;
 			* ) echo "repet please !!!"; break;;
 		esac
